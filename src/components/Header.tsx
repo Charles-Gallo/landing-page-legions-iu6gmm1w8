@@ -1,31 +1,40 @@
 import { Button } from '@/components/ui/button'
+import logoTransp from '@/assets/agencia-legions-transp-5718a.png'
 
-export function Header() {
-  const scrollToForm = () => {
-    const formSection = document.getElementById('form-section')
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' })
-    }
+export default function Header() {
+  const handleScrollToForm = () => {
+    document.getElementById('lead-capture')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {/* Mockup Logo using generic icon, styled to look like a brand */}
-          <div className="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center text-white font-bold text-xl">
-            L
-          </div>
-          <span className="font-bold text-xl tracking-tight text-gray-900">
-            Agência <span className="text-brand-blue">Legions</span>
-          </span>
-        </div>
-
+        <a href="/" className="flex items-center gap-2">
+          <img src={logoTransp} alt="Agência Legions" className="h-10 w-auto" />
+        </a>
+        <nav className="hidden md:flex gap-6">
+          <button
+            onClick={() =>
+              document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })
+            }
+            className="text-sm font-medium hover:text-brand-blue transition-colors"
+          >
+            A Dor
+          </button>
+          <button
+            onClick={() =>
+              document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })
+            }
+            className="text-sm font-medium hover:text-brand-blue transition-colors"
+          >
+            Benefícios
+          </button>
+        </nav>
         <Button
-          onClick={scrollToForm}
-          className="bg-brand-blue hover:bg-brand-blue/90 text-white font-medium px-6 hidden sm:flex transition-transform active:scale-95"
+          onClick={handleScrollToForm}
+          className="bg-brand-red hover:bg-brand-red/90 text-white font-semibold"
         >
-          Download Gratuito
+          Baixar Planilha
         </Button>
       </div>
     </header>

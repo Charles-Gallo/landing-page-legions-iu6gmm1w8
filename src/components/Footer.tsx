@@ -1,47 +1,53 @@
-import { Twitter, Linkedin, Instagram } from 'lucide-react'
+import logoBranco from '@/assets/agencia-legions-branco-2-2e0ea.png'
+import { Facebook, Instagram, Linkedin } from 'lucide-react'
 
-export function Footer() {
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 border-t border-gray-800">
-      <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center">
-        <div className="flex items-center gap-2 mb-6">
-          <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white font-bold text-xl">
-            L
+    <footer className="bg-brand-blue text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <img src={logoBranco} alt="Agência Legions" className="h-12 w-auto" />
+            <p className="text-white/80 text-sm max-w-sm text-center md:text-left">
+              Especialistas em marketing, vendas e tecnologia para escalar o seu negócio de forma
+              previsível e consistente.
+            </p>
           </div>
-          <span className="font-bold text-xl tracking-tight text-white">
-            Agência <span className="text-brand-blue">Legions</span>
-          </span>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.facebook.com/agencialegions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <Facebook className="h-6 w-6" />
+              <span className="sr-only">Facebook</span>
+            </a>
+            <a
+              href="https://www.instagram.com/agencialegions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <Instagram className="h-6 w-6" />
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/agencia-legions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <Linkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+          </div>
         </div>
 
-        <p className="text-gray-400 max-w-md mb-8">
-          Ajudando empresas B2B a escalar suas vendas com processos estruturados e previsibilidade
-          de receita através de tecnologia e metodologia própria.
-        </p>
-
-        <div className="flex items-center gap-4 mb-8">
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-blue hover:bg-white/10 transition-colors"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-blue hover:bg-white/10 transition-colors"
-          >
-            <Instagram className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-brand-blue hover:bg-white/10 transition-colors"
-          >
-            <Twitter className="w-5 h-5" />
-          </a>
+        <div className="mt-12 pt-8 border-t border-white/20 text-center text-sm text-white/60">
+          <p>© {new Date().getFullYear()} Agência Legions. Todos os direitos reservados.</p>
         </div>
-
-        <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} Agência Legions. Todos os direitos reservados.
-        </p>
       </div>
     </footer>
   )
