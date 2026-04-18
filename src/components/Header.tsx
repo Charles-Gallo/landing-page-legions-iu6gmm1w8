@@ -19,7 +19,7 @@ export default function Header() {
             }
             className="text-sm font-medium hover:text-brand-blue transition-colors"
           >
-            A Dor
+            Template
           </button>
           <button
             onClick={() =>
